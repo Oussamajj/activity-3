@@ -1,0 +1,25 @@
+.welcome-card {
+  border-radius: 14px;
+  border: none;
+}
+
+.card-title {
+  color: #212b5e;
+  font-weight: 700;
+}
+
+.feature {
+  background: #f7f9ff;
+  border: 1px solid #e1e7fb;
+  border-radius: 10px;
+  color: #3457d5;
+}
+
+.feature h5 {
+  color: #212b5e;
+}
+
+.feature p {
+  color: #5a6480;
+  font-size: 0.9rem;
+}

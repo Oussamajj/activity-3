@@ -1,0 +1,68 @@
+<div class="card shadow-sm products-card">
+  <div class="card-body p-4">
+    <div class="d-flex flex-wrap justify-content-between align-items-center mb-3">
+      <div>
+        <h2 class="mb-1"><i class="bi bi-list-ul"></i> Liste des produits</h2>
+        <p class="text-muted mb-0">Projet réalisé par <strong>Oussama</strong></p>
+      </div>
+      @if (products) {
+        <span class="badge rounded-pill text-bg-primary fs-6">
+          {{ products.length }} produit(s)
+        </span>
+      }
+    </div>
+
+    @if (products) {
+      <div class="table-responsive">
+        <table class="table table-striped table-hover align-middle">
+          <thead class="table-dark">
+            <tr>
+              <th scope="col">ID</th>
+              <th scope="col">Name</th>
+              <th scope="col">Price</th>
+              <th scope="col">Selected</th>
+              <th></th>
+            </tr>
+          </thead>
+          <tbody>
+            <!-- Nouveau moteur de template Angular (depuis la v17) -->
+            @for (p of products; track p) {
+              <tr>
+                <td>{{ p.id }}</td>
+                <td class="fw-semibold">{{ p.name }}</td>
+                <td>{{ p.price }}</td>
+                <td>
+                  @if (p.selected) {
+                    <i class="bi bi-check-circle-fill text-success fs-5"
+                       title="Produit sélectionné"></i>
+                  } @else {
+                    <i class="bi bi-x-circle text-secondary fs-5"
+                       title="Produit non sélectionné"></i>
+                  }
+                </td>
+                <td>
+                  <button type="button"
+                          class="btn btn-sm btn-outline-danger"
+                          (click)="handleDelete(p)">
+                    <i class="bi bi-trash"></i> Delete
+                  </button>
+                </td>
+              </tr>
+            } @empty {
+              <tr>
+                <td colspan="5" class="text-center text-muted py-4">
+                  Aucun produit à afficher. Redémarrez le backend pour les recharger.
+                </td>
+              </tr>
+            }
+          </tbody>
+        </table>
+      </div>
+    } @else {
+      <div class="alert alert-info mb-0">
+        <span class="spinner-border spinner-border-sm me-2"></span>
+        Chargement des produits...
+      </div>
+    }
+  </div>
+</div>

@@ -1,0 +1,16 @@
+# Dépendances et artifacts générés
+frontend/node_modules/
+frontend/dist/
+frontend/.angular/
+backend/target/
+
+# Logs
+*.log
+npm-debug.log*
+
+# IDE / système
+.idea/
+.vscode/*
+!.vscode/settings.json
+.DS_Store
+Thumbs.db

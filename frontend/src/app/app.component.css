@@ -1,0 +1,25 @@
+.app-navbar {
+  background: linear-gradient(90deg, #212b5e, #3457d5);
+  box-shadow: 0 2px 10px rgba(20, 30, 80, 0.18);
+}
+
+.navbar-brand {
+  color: #fff;
+  font-weight: 700;
+  letter-spacing: 0.3px;
+}
+
+.navbar-brand:hover {
+  color: #d7e0ff;
+}
+
+.active-home {
+  background: #fff;
+  color: #212b5e;
+  font-weight: 600;
+}
+
+.app-footer {
+  color: #5a6480;
+  font-size: 0.9rem;
+}
